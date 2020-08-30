@@ -38,6 +38,9 @@ let test#strategy = {
   \}
 nnoremap <silent> <Leader>q :Copen<CR>
 
+" git
+nmap <leader>gs :Gstatus<cr>
+
 " misc
 if &diff
   set diffopt-=internal
