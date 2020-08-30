@@ -4,8 +4,8 @@ set -g status-position bottom
 set -g @resurrect-capture-pane-contents 'on'
 set -s escape-time 0
 
-bind-key r source-file ~/.tmux.conf \; display-message "~/.tmux.conf reloaded"
-bind-key M split-window -h "vim ~/.tmux.conf"
+bind-key r source-file ~/dotfiles-local/tmux.conf.local \; display-message "tmux reloaded"
+bind-key M split-window -h "vim ~/dotfiles-local/tmux.conf.local"
 
 bind | split-window -h -c '#{pane_current_path}'
 bind _ split-window -c '#{pane_current_path}'
