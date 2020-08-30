@@ -1,0 +1,45 @@
+" vimrc upkeep
+let $MYVIMRC = "~/dotfiles-local/vimrc.local"
+nmap <leader>vr :sp $MYVIMRC<cr>
+nmap <leader>so :source $MYVIMRC<cr>
+
+" mine
+nmap 0 ^<cr>
+nnoremap <CR> :nohlsearch<cr>
+nnoremap <silent> <leader>+ :exe "resize " . (winheight(0) * 3/2)<CR>
+nnoremap <silent> <leader>- :exe "resize " . (winheight(0) * 2/3)<CR>
+nnoremap <silent> <leader>> :exe "vertical resize " . (winwidth(0) * 3/2)<CR>
+nnoremap <silent> <leader>< :exe "vertical resize " . (winwidth(0) * 2/3)<CR>
+
+" lint config
+let g:ale_sign_error = '😠'
+let g:ale_sign_warning = '--'
+let g:ale_linters = {
+      \   'vue': ['prettier', 'eslint'],
+      \   'javascript': ['prettier', 'eslint'],
+      \   'ruby': ['rubocop'],
+      \}
+let g:ale_fixers = {
+      \   '*': ['remove_trailing_lines', 'trim_whitespace'],
+      \   'vue': ['prettier', 'eslint'],
+      \   'javascript': ['prettier', 'eslint'],
+      \   'ruby': ['rubocop'],
+      \   'elixir': ['mix_format'],
+      \}
+let g:ale_lint_on_enter = 0
+let g:ale_set_highlights = 0
+nmap <leader>f :ALEFix<CR>
+
+" vim test
+let test#strategy = {
+  \ 'nearest': 'basic',
+  \ 'file':    'dispatch',
+  \ 'suite':   'dispatch',
+  \}
+nnoremap <silent> <Leader>q :Copen<CR>
+
+" misc
+if &diff
+  set diffopt-=internal
+  set diffopt+=vertical
+endif

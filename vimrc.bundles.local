@@ -1,0 +1,4 @@
+Plug 'tpope/vim-dispatch'
+Plug 'tpope/rbenv-ctags'
+Plug 'terryma/vim-multiple-cursors'
+Plug 'airblade/vim-gitgutter'
