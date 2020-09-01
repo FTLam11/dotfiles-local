@@ -3,6 +3,12 @@ let $MYVIMRC = "~/dotfiles-local/vimrc.local"
 nmap <leader>vr :sp $MYVIMRC<cr>
 nmap <leader>so :source $MYVIMRC<cr>
 
+" setup vim-textobj-rubyblock
+set nocompatible
+if has("autocmd")
+  filetype indent plugin on
+endif
+
 " mine
 nmap 0 ^<cr>
 nnoremap <CR> :nohlsearch<cr>
