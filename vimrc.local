@@ -51,6 +51,11 @@ nnoremap <silent> <Leader>q :Copen<CR>
 " git
 nmap <leader>gs :Gstatus<cr>
 
+" snippets
+let g:UltiSnipsExpandTrigger="<C-Z>"
+let g:UltiSnipsJumpForwardTrigger="<Down>"
+let g:UltiSnipsJumpBackwardTrigger="<Up>"
+
 " misc
 if &diff
   set diffopt-=internal
