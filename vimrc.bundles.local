@@ -1,5 +1,6 @@
 Plug 'tpope/vim-dispatch'
 Plug 'tpope/rbenv-ctags'
+Plug 'tpope/vim-unimpaired'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'airblade/vim-gitgutter'
 Plug 'kana/vim-textobj-user'
