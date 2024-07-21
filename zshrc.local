@@ -1,7 +1,5 @@
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/telemastuh/.oh-my-zsh
-export PKG_CONFIG_PATH="/usr/local/opt/libxml2/lib/pkgconfig"
-export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
+export ZSH="$HOME/.oh-my-zsh"
 
 # updating manfiles for bundler
 # export GROFF_NO_SGR=true
