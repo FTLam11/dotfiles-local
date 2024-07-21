@@ -20,6 +20,7 @@ cmap <C-p> <C-r>%
 set hlsearch
 set nowrap
 set noro
+nnoremap <leader>bd :%bd!<CR>
 
 " lint config
 let g:ale_sign_error = '😠'
