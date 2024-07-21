@@ -2,7 +2,7 @@
 [user]
 	name = Frank Lam
 	email = ryzingsun11@yahoo.com
-	signingkey = 771022A2327531C7
+	signingkey = 12AFCDEDCCCF33F2
 [core]
 	editor = /usr/bin/vim
 	excludesfile = /Users/telemastuh/.global_ignore
