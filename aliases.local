@@ -1,3 +1,2 @@
-alias rake='noglob rake'
 alias gmnff='git merge --no-ff'
 alias gds='git diff --staged'
