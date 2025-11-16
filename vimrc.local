@@ -62,3 +62,17 @@ if &diff
   set diffopt-=internal
   set diffopt+=vertical
 endif
+
+" rails.vim
+let g:rails_gem_projections = {
+\ "factory_bot_rails": {
+\   "spec/factories/*.rb": {
+\     "command": "factory",
+\     "affinity": "collection",
+\     "alternate": "app/models/{singular}.rb",
+\     "test": "spec/models/{}_spec.rb",
+\     "template": ["FactoryBot.define do", "  factory :{singular} do", "  end", "end"],
+\     "rubyMacro": ["association", "factory", "sequence", "trait", "transient"],
+\   },
+\ },
+\ }
