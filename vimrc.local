@@ -76,3 +76,27 @@ let g:rails_gem_projections = {
 \   },
 \ },
 \ }
+
+function! CreateConfigEnvFile(rails_app_root_path)
+  let current_buffer_file_path = expand("%:p")
+  let pack_name = matchstr(current_buffer_file_path, '\/packs\/\w\+')
+  let env_file_path = a:rails_app_root_path . pack_name . "/config/environment.rb"
+
+  if !filereadable(env_file_path)
+    call writefile([], env_file_path, "s")
+  endif
+
+  " Looks like this isn't setting the variable as expected
+  let b:rails_root = a:rails_app_root_path . pack_name
+endfunction
+
+" Workaround for making rails.vim Packwerk pack aware
+" rails.vim uses b:rails_root to scope its file search
+" Without this autocommand, opening a buffer in /packs/my_pack/my_file.rb has
+" b:rails_root set to the application root directory, so commands like :A and :R
+" look in application root and not the pack.
+au BufEnter packs/**/*.rb {
+  if b:rails_root !~# '/packs/'
+    call CreateConfigEnvFile(b:rails_root)
+  endif
+}
