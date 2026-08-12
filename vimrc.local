@@ -52,11 +52,8 @@ nnoremap <silent> <Leader>q :Copen<CR>
 " git
 nmap <leader>gs :Gstatus<cr>
 
-" misc
-if &diff
-  set diffopt-=internal
-  set diffopt+=vertical
-endif
+" Keep git diff display consistent
+set diffopt+=vertical
 
 " rails.vim
 let g:rails_gem_projections = {
