@@ -5,7 +5,7 @@
 	signingkey = 12AFCDEDCCCF33F2
 [core]
 	editor = /usr/bin/vim
-	excludesfile = /Users/telemastuh/.global_ignore
+	excludesfile = ~/.global_ignore
 [init]
 	templatedir = ~/.git_template
 [commit]
