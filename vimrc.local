@@ -49,9 +49,6 @@ let test#strategy = {
   \}
 nnoremap <silent> <Leader>q :Copen<CR>
 
-" git
-nmap <leader>gs :Gstatus<cr>
-
 " Keep git diff display consistent
 set diffopt+=vertical
 
