@@ -2,7 +2,7 @@
 [user]
 	name = Frank Lam
 	email = ryzingsun11@yahoo.com
-	signingkey = 12AFCDEDCCCF33F2
+	signingkey = ~/.ssh/id_ed25519.pub
 [core]
 	editor = /usr/bin/vim
 	excludesfile = ~/.global_ignore
@@ -11,4 +11,4 @@
 [commit]
 	gpgsign = true
 [gpg]
-	program = /usr/local/bin/gpg
+	format = ssh
