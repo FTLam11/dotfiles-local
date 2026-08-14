@@ -7,6 +7,7 @@ KEYTIMEOUT=1
 plugins=(extract git rails rake)
 unsetopt nomatch
 source $ZSH/oh-my-zsh.sh
+eval "$(/Users/fdawg/.local/bin/mise activate zsh)"
 
 # env
 export LANG=en_US.UTF-8
