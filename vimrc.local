@@ -26,19 +26,24 @@ nnoremap <leader>bd :%bd!<CR>
 let g:ale_sign_error = '😠'
 let g:ale_sign_warning = '--'
 let g:ale_linters = {
-      \   'vue': ['prettier', 'eslint'],
       \   'javascript': ['prettier', 'eslint'],
       \   'ruby': ['rubocop'],
+      \   'go': ['gopls', 'golangci-lint'],
       \}
 let g:ale_fixers = {
       \   '*': ['remove_trailing_lines', 'trim_whitespace'],
-      \   'vue': ['prettier', 'eslint'],
       \   'javascript': ['prettier', 'eslint'],
       \   'ruby': ['rubocop'],
+      \   'go': ['revive', 'gofmt', 'goimports', 'golangci_lint'],
       \   'elixir': ['mix_format'],
       \}
 let g:ale_lint_on_enter = 0
+let g:ale_lint_on_text_changed = 'never'
+let g:ale_lint_on_insert_leave = 0
 let g:ale_set_highlights = 0
+let g:ale_linters_explicit = 1
+let g:ale_disable_lsp = 0
+let g:ale_virtualtext_cursor = 0
 nmap <leader>f :ALEFix<CR>
 
 " vim test
