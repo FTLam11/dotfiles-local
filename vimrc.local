@@ -23,11 +23,13 @@ set noro
 nnoremap <leader>bd :%bd!<CR>
 
 " lint config
+let g:ale_ruby_ruby_lsp_executable = 'ruby-lsp'
+let g:ale_ruby_rubocop_executable = 'rubocop'
 let g:ale_sign_error = '😠'
-let g:ale_sign_warning = '--'
+let g:ale_sign_warning = '❗'
 let g:ale_linters = {
       \   'javascript': ['prettier', 'eslint'],
-      \   'ruby': ['rubocop'],
+      \   'ruby': ['ruby_lsp', 'rubocop'],
       \   'go': ['gopls', 'golangci-lint'],
       \}
 let g:ale_fixers = {
@@ -44,7 +46,24 @@ let g:ale_set_highlights = 0
 let g:ale_linters_explicit = 1
 let g:ale_disable_lsp = 0
 let g:ale_virtualtext_cursor = 0
+let g:ale_completion_enabled = 1
+let g:ale_hover_to_floating_preview = 1
+set omnifunc=ale#completion#OmniFunc
+nnoremap K <cmd>ALEHover<CR>
+nnoremap <C-]> <cmd>ALEGoToDefinition<CR>
+nnoremap <leader>gr <cmd>ALEFindReferences<CR>
+nnoremap <leader>ca <cmd>ALECodeAction<CR>
 nmap <leader>f :ALEFix<CR>
+
+call ale#Set('ruby_ruby_lsp_executable', 'ruby-lsp')
+
+call ale#linter#Define('ruby', {
+      \   'name': 'ruby_lsp',
+      \   'lsp': 'stdio',
+      \   'executable': {b -> ale#Var(b, 'ruby_ruby_lsp_executable')},
+      \   'command': '%e',
+      \   'project_root': {b -> ale#path#FindNearestFile(b, 'Gemfile')}
+      \})
 
 " vim test
 let test#strategy = {
